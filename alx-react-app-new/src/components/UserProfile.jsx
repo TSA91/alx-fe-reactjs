@@ -15,11 +15,11 @@ function UserProfile(props) {
             <p style={{ 
                 fontSize: '16px',
                 margin: '5px 0'
-            }}>Age: {props.age}</p>
+            }}>Age: <span style={{ fontWeight: 'bold' }}>{props.age}</span></p>
             <p style={{ 
                 fontSize: '16px',
                 margin: '5px 0'
-            }}>Bio: {props.bio}</p>
+            }}>Bio: <span style={{ color: '#666' }}>{props.bio}</span></p>
         </div>
     );
 }
