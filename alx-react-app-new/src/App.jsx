@@ -1,3 +1,4 @@
+// src/App.jsx
 import Header from './components/Header'
 import UserProfile from './components/UserProfile'
 import MainContent from './components/MainContent'
@@ -6,16 +7,16 @@ import './App.css'
 
 function App() {
   return (
-    <div style={{ 
+    <div style={{
       minHeight: '100vh',
-      backgroundColor: '#f0f2f5',
-      paddingBottom: '60px' // Space for fixed footer
+      paddingBottom: '60px',
+      position: 'relative'
     }}>
       <Header />
       <UserProfile 
         name="Alice Johnson"
         age="25"
-        bio="Passionate traveler and photography enthusiast"
+        bio="Loves hiking and photography"
       />
       <MainContent />
       <Footer />
@@ -23,4 +24,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
