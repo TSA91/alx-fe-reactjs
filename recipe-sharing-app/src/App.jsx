@@ -1,27 +1,31 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
-import useRecipeStore from './components/recipeStore';  // Updated import path
+import RecipeDetails from './components/RecipeDetails';
 import './App.css';
 
 function App() {
-  const initializeRecipes = useRecipeStore((state) => state.initializeRecipes);
-
-  useEffect(() => {
-    initializeRecipes();
-  }, []);
-
   return (
-    <div className="app">
-      <header>
-        <h1>Recipe Sharing App</h1>
-      </header>
-      
-      <main>
-        <AddRecipeForm />
-        <RecipeList />
-      </main>
-    </div>
+    <Router>
+      <div className="app">
+        <header>
+          <h1>Recipe Sharing App</h1>
+        </header>
+        
+        <main>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <AddRecipeForm />
+                <RecipeList />
+              </>
+            } />
+            <Route path="/recipe/:id" element={<RecipeDetails />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
